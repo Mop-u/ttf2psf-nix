@@ -19,8 +19,11 @@
                 pkg-config
             ];
             installPhase = ''
-                mkdir -p "$out/bin"
-                cp "build/ttf2psf" "$out/bin/ttf2psf"
+                mkdir -p $out/bin
+                mkdir -p $out/share
+                cp build/ttf2psf $out/bin/ttf2psf
+                cp -r data $out/share/
+                mv $out/share/data $out/share/ttf2psf
             '';
 
             system = builtins.currentSystem;
