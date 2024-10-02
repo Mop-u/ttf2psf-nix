@@ -20,8 +20,7 @@
             ];
             installPhase = ''
                 mkdir -p "$out/bin"
-                make -C "$src"
-                cp "$src/build/ttf2psf" "$out/bin/ttf2psf"
+                cp "build/ttf2psf" "$out/bin/ttf2psf"
             '';
 
             system = builtins.currentSystem;
